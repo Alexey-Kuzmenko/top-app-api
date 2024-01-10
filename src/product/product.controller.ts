@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { ProductModel } from './product.model';
 import { FindProductDto } from './dto/find-product.dto';
 
@@ -17,6 +17,7 @@ export class ProductController {
     @Patch(':id')
     async updateProduct(@Param('id') id: string, @Body() dto: ProductModel) { }
 
+    @UsePipes(new ValidationPipe())
     @HttpCode(200)
     @Post()
     async findProduct(@Body() dto: FindProductDto) { }
