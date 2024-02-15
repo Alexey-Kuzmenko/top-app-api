@@ -2,6 +2,9 @@
 /dist
 /node_modules
 
+# Files
+/uploads
+
 # Mongo
 /mongo-data
 

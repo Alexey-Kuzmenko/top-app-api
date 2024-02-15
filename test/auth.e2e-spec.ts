@@ -78,7 +78,6 @@ describe('Auth module (e2e)', () => {
             })
     })
 
-
     afterAll(async () => {
         await disconnect()
     });
